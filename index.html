@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CeresF3b</title>
+    <style>
+        @font-face {
+            font-family: 'PixelFont';
+            src: url('https://your-font-url-here.woff2') format('woff2');
+            /* Sostituisci con il link al tuo font */
+        }
+
+        body {
+            background-color: #000000; /* Cambiato il colore di sfondo in nero */
+            color: white;
+            font-family: 'PixelFont', Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Impedisce lo scroll */
+        }
+
+        #particles-js {
+            position: fixed; /* Cambiato da absolute a fixed */
+            width: 100vw; /* Imposta la larghezza al 100% della viewport */
+            height: 100vh; /* Imposta l'altezza al 100% della viewport */
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* Rimosso il bordo rosso per il debug */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-buttons img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .profile-pic img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px; /* Aggiunge arrotondamento agli angoli */
+        }
+
+        .social-buttons a {
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+        }
+
+        .icon-rounded {
+            border-radius: 10px; /* Aggiunge arrotondamento agli angoli */
+        }
+
+        .label {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .item {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <h1>CeresF3b</h1>
+
+        <div class="item">
+            <img src="https://avatars.akamai.steamstatic.com/b5de1af8fcf0e8d3ef30de3888a217fea66596bc_full.jpg" alt="Helldiver" class="icon">
+            <span class="label">Helldiver</span>
+        </div>
+
+        <div class="item">
+            <img src="https://media.tenor.com/K1uImj3uSYoAAAAi/doom-slayer-dance.gif" alt="Doom Player" class="icon">
+            <span class="label">Doom Player</span>
+        </div>
+
+        <div class="item">
+            <img src="https://cdn.thingiverse.com/renders/97/21/d9/b7/6c/tf2_logo_display_large.jpg" alt="TF2 Degenerate" class="icon">
+            <span class="label">TF2 Degenerate</span>
+        </div>
+
+        <div class="item">
+            <img src="https://soufan.me/content/images/size/w600/2024/04/DALL-E-2024-04-27-03.50.22---A-sophisticated-and-professional-digital-artwork-for-an-article-on-cybersecurity-for-small-businesses.-The-image-features-a-sleek--silver-shield-symbo.webp" alt="Cybersecurity Specialist" class="icon icon-rounded">
+            <span class="label">Cybersecurity Specialist</span>
+        </div>
+
+        <div class="social-buttons">
+            <a href="https://www.reddit.com/user/CeresF3b/">
+                <img src="https://img.icons8.com/color/48/000000/reddit.png" alt="Reddit">
+            </a>
+            <a href="https://github.com/CeresF3b">
+                <img src="https://img.icons8.com/ios-glyphs/48/ffffff/github.png" alt="GitHub">
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "opacity_min": 0,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false, /* Disabilitato l'effetto del cursore */
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": false, /* Disabilitato l'effetto del clic */
+                        "mode": "repulse"
+                    }
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "remove": {
+                        "particles_nb": 10
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
