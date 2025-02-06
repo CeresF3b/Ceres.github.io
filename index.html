@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CeresF3b</title>
+    
+    <!-- Font e stili combinati -->
     <style>
         @font-face {
             font-family: 'PixelFont';
-            src: url('https://your-font-url-here.woff2') format('woff2');
-            /* Sostituisci con il link al tuo font */
+            src: url('https://your-website.com/fonts/PixelFont.woff2') format('woff2');
         }
 
         body {
@@ -27,7 +28,8 @@
             height: 100vh;
             top: 0;
             left: 0;
-            z-index: -1;
+            z-index: 0;
+            touch-action: manipulation; /* Nuovo: migliora il touch */
         }
 
         .container {
@@ -36,6 +38,11 @@
             margin: 0 auto;
             padding: 20px;
             max-width: 800px;
+            pointer-events: none;
+        }
+
+        .container > * {
+            pointer-events: auto;
         }
 
         .social-buttons {
@@ -52,14 +59,10 @@
             width: 50px;
             height: 50px;
             vertical-align: middle;
-            object-fit: contain;
         }
 
-        .cyber-icon {
-            width: 55px;
-            height: 55px;
-            filter: brightness(0) invert(1);
-            margin-right: 8px;
+        .icon-rounded {
+            border-radius: 10px;
         }
 
         .label {
@@ -70,9 +73,27 @@
 
         .item {
             margin: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        }
+
+        /* Stili per mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+                max-width: 95%;
+            }
+            
+            .icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .label {
+                font-size: 0.9em;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -98,9 +119,7 @@
         </div>
 
         <div class="item">
-            <img src="https://cdn-icons-png.freepik.com/512/1797/1797500.png" 
-                 alt="Shield Icon" 
-                 class="icon cyber-icon">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHEwczUybzZhYmFhOGdqYWtwaHM5bzYzNTM0eXAwMHI4emcza3EwbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WRoLGgwE4xTQYTxyJg/giphy.gif" alt="Cybersecurity Specialist" class="icon icon-rounded">
             <span class="label">Cybersecurity Specialist</span>
         </div>
 
@@ -118,11 +137,37 @@
     <script>
         particlesJS("particles-js", {
             "particles": {
-                "number": {"value": 100},
-                "color": {"value": "#ffffff"},
-                "shape": {"type": "circle"},
-                "opacity": {"value": 0.5},
-                "size": {"value": 3},
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "opacity_min": 0,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
@@ -130,15 +175,47 @@
                     "opacity": 0.4,
                     "width": 1
                 },
-                "move": {"enable": true, "speed": 2}
+                "move": {
+                    "enable": true,
+                    "speed": 4,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "bounce" /* Cambiato per mobile */
+                }
             },
             "interactivity": {
+                "detect_on": "window",
                 "events": {
-                    "onhover": {"enable": false},
-                    "onclick": {"enable": false}
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "ontouchmove": { /* Nuovo: gestione del touch */
+                        "enable": true,
+                        "mode": "repulse",
+                        "delay": 150
+                    }
+                },
+                "modes": {
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.8,
+                        "speed": 5 /* Aumentato per mobile */
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
                 }
-            }
+            },
+            "retina_detect": true
         });
     </script>
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 </body>
 </html>
