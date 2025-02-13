@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CeresF3b</title>
+    <meta name="description" content="Welcome to CeresF3b's website, a passionate gamer, cybersecurity enthusiast, and tech lover.">
+    <meta name="keywords" content="CeresF3b, gaming, cybersecurity, technology, Helldiver, Doom, TF2">
+    <meta name="author" content="CeresF3b">
+    <link rel="icon" type="image/png" href="path/to/favicon.png">
     
-    <!-- Font e stili combinati -->
+    <!-- Combined Fonts and Styles -->
     <style>
         @font-face {
             font-family: 'PixelFont';
@@ -29,7 +33,7 @@
             top: 0;
             left: 0;
             z-index: 0;
-            touch-action: manipulation; /* Nuovo: migliora il touch */
+            touch-action: manipulation;
         }
 
         .container {
@@ -75,7 +79,26 @@
             margin: 20px 0;
         }
 
-        /* Stili per mobile */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .item {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Light Mode Styles */
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
@@ -104,7 +127,7 @@
         <h1>CeresF3b</h1>
 
         <div class="item">
-            <img src="https://avatars.akamai.steamstatic.com/b5de1af8fcf0e8d3ef30de3888a217fea66596bc_full.jpg" alt="Helldiver" class="icon">
+            <img src="https://cdn2.steamgriddb.com/icon/0ec73496338b196fb1394ea142533248/32/256x256.png" alt="Helldiver" class="icon">
             <span class="label">Helldiver</span>
         </div>
 
@@ -114,13 +137,26 @@
         </div>
 
         <div class="item">
-            <img src="https://cdn.thingiverse.com/renders/97/21/d9/b7/6c/tf2_logo_display_large.jpg" alt="TF2 Degenerate" class="icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Team_Fortress_2_style_logo.svg/2048px-Team_Fortress_2_style_logo.svg.png" alt="TF2 Degenerate" class="icon">
             <span class="label">TF2 Degenerate</span>
         </div>
 
         <div class="item">
-            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHEwczUybzZhYmFhOGdqYWtwaHM5bzYzNTM0eXAwMHI4emcza3EwbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WRoLGgwE4xTQYTxyJg/giphy.gif" alt="Cybersecurity Specialist" class="icon icon-rounded">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXJsempqaHFqa3hlN3p4cHYxZGJ5cWtqdmJzczZjam5yNmRoeTF0NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/B4dt6rXq6nABilHTYM/giphy.gif" alt="Cybersecurity Specialist" class="icon icon-rounded">
             <span class="label">Cybersecurity Specialist</span>
+        </div>
+
+        <div class="item">
+            <h2>About Me</h2>
+            <p>Hi! I'm a passionate gamer, cybersecurity enthusiast, and tech lover. I enjoy exploring virtual worlds and solving complex problems.</p>
+        </div>
+
+        <div class="item">
+            <h2>Some of my Projects</h2>
+            <ul>
+                <li><a href="https://github.com/CeresF3b/NetworkScanner">PowerShell NetWork Scanner</a></li>
+                <li><a href="https://github.com/CeresF3b/Ceres.github.io">This site code</a></li>
+            </ul>
         </div>
 
         <div class="social-buttons">
@@ -181,7 +217,7 @@
                     "direction": "none",
                     "random": false,
                     "straight": false,
-                    "out_mode": "bounce" /* Cambiato per mobile */
+                    "out_mode": "bounce"
                 }
             },
             "interactivity": {
@@ -195,7 +231,7 @@
                         "enable": true,
                         "mode": "push"
                     },
-                    "ontouchmove": { /* Nuovo: gestione del touch */
+                    "ontouchmove": {
                         "enable": true,
                         "mode": "repulse",
                         "delay": 150
@@ -205,7 +241,7 @@
                     "repulse": {
                         "distance": 200,
                         "duration": 0.8,
-                        "speed": 5 /* Aumentato per mobile */
+                        "speed": 5
                     },
                     "push": {
                         "particles_nb": 4
