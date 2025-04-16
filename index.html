@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic meta tags for character set and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CeresF3b</title>
+    <!-- SEO meta tags for better search engine visibility -->
     <meta name="description" content="Welcome to CeresF3b's website, a passionate gamer, cybersecurity enthusiast, and tech lover.">
     <meta name="keywords" content="CeresF3b, gaming, cybersecurity, technology, Helldiver, Doom, TF2">
     <meta name="author" content="CeresF3b">
+    <!-- Favicon for browser tab icon -->
     <link rel="icon" type="image/png" href="path/to/favicon.png">
     
-    <!-- Combined Fonts and Styles -->
+    <!-- Combined Fonts and Styles - All styles in one block for faster page loading -->
     <style>
+        /* Custom font definition for the pixel art style */
         @font-face {
             font-family: 'PixelFont';
             src: url('https://your-website.com/fonts/PixelFont.woff2') format('woff2');
         }
 
+        /* Base body styles with dark theme */
         body {
             background-color: #000000;
             color: white;
@@ -26,6 +31,7 @@
             overflow: hidden;
         }
 
+        /* Particle.js background container - creates the interactive background effect */
         #particles-js {
             position: fixed;
             width: 100vw;
@@ -36,6 +42,7 @@
             touch-action: manipulation;
         }
 
+        /* Main content container - positioned above the particles background */
         .container {
             position: relative;
             z-index: 1;
@@ -45,60 +52,72 @@
             pointer-events: none;
         }
 
+        /* Enable pointer events for container children while keeping container itself non-interactive */
         .container > * {
             pointer-events: auto;
         }
 
+        /* Social media buttons container - horizontal layout */
         .social-buttons {
             display: flex;
             justify-content: center;
+            gap: 15px; /* Add spacing between social icons */
         }
 
+        /* Social media icons sizing */
         .social-buttons img {
             width: 50px;
             height: 50px;
         }
 
+        /* Standard icon styling for all icons */
         .icon {
             width: 50px;
             height: 50px;
             vertical-align: middle;
         }
 
+        /* Rounded corners for specific icons */
         .icon-rounded {
             border-radius: 10px;
         }
 
+        /* Text label styling for items */
         .label {
             display: inline-block;
             vertical-align: middle;
             margin-left: 10px;
         }
 
+        /* Content item container with vertical spacing */
         .item {
             margin: 20px 0;
         }
 
+        /* Animation for content items appearing with a fade-in effect */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Apply fade-in animation to all content items */
         .item {
             animation: fadeIn 1s ease-out;
         }
 
+        /* Hover effect for icons - slight scale increase */
         .icon:hover {
             transform: scale(1.1);
             transition: transform 0.3s ease;
         }
 
-        /* Light Mode Styles */
+        /* Light Mode Styles - for future implementation of theme toggle */
         .light-mode {
             background-color: #ffffff;
             color: #000000;
         }
 
+        /* Responsive design for mobile devices */
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
@@ -119,10 +138,22 @@
             }
         }
 
-        /* Aggiungi queste regole per rimuovere i puntini dall'elenco */
+        /* Remove bullet points from lists for cleaner appearance */
         ul {
             list-style-type: none !important;
             padding: 0 !important;
+        }
+        
+        /* Project links styling */
+        .project-link {
+            color: #4da6ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .project-link:hover {
+            color: #80c1ff;
+            text-decoration: underline;
         }
 
     </style>
@@ -161,8 +192,9 @@
         <div class="item">
             <h2>Some of my Projects</h2>
             <ul>
-                <li><a href="https://github.com/CeresF3b/NetworkScanner">PowerShell NetWork Scanner</a></li>
-                <li><a href="https://github.com/CeresF3b/Ceres.github.io">This site code</a></li>
+                <li><a href="https://github.com/CeresF3b/NetworkScanner" class="project-link">PowerShell NetWork Scanner</a> - A tool for scanning and analyzing network devices</li>
+                <li><a href="https://github.com/CeresF3b/PC-Fixer" class="project-link">PC-Fixer</a> - Utility for diagnosing and fixing common PC issues</li>
+                <li><a href="https://github.com/CeresF3b/Ceres.github.io" class="project-link">This site code</a> - Source code for this website</li>
             </ul>
         </div>
 
@@ -176,7 +208,9 @@
         </div>
     </div>
 
+    <!-- Particles.js library for the interactive background effect -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Configuration for the particles background -->
     <script>
         particlesJS("particles-js", {
             "particles": {
@@ -259,6 +293,7 @@
         });
     </script>
 
+    <!-- Preconnect to CDN for faster resource loading -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
 </body>
 </html>
