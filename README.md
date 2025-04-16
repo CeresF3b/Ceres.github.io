@@ -29,7 +29,7 @@ The interactive background uses the particles.js library that creates a dynamic 
 
 You can view the site in two ways:
 
-1. **Online**: Visit [CeresF3b.github.io](https://CeresF3b.github.io)
+1. **Online**: Visit [CeresF3b.github.io]([https://CeresF3b.github.io](https://ceresf3b.github.io/Ceres.github.io/))
 2. **Locally**: Download the repository and open the `index.html` file in any web browser
 
 ## 🔧 Customization
